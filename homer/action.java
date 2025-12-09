@@ -17,11 +17,11 @@ public class action {
         switch (odpoved) {
             case "help":
                 return "tady neni zadna pomoc bro";
+                
             case "punch":
-                int random_hit = random.nextInt(5);
+                int random_hit = rng.randomcislo(5);
                 zloun.gethit(random_hit);
                 return "";
-                
 
             default:
                 return "nevim co chces";
