@@ -12,7 +12,7 @@ public class popbal {
 
         while (endgame) {
             System.out.println("// what do you do //");
-            String odpoved = input.next();
+            String odpoved = input.nextLine();
             action ok = new action(odpoved, zloun);
             System.out.println(ok.udelej() + "\n");
             if (zloun.isbrodead() == true) {
