@@ -1,6 +1,6 @@
 package homer;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class popbal {
     public static void main(String[] args) {

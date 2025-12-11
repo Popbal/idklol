@@ -1,6 +1,6 @@
 package homer;
 
-import java.util.Random;
+import java.util.*;
 
 public class action {
 
