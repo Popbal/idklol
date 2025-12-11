@@ -1,4 +1,4 @@
-package homer;
+
 
 public class map {
     map[][] grid;  

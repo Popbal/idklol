@@ -1,11 +1,11 @@
-package homer;
+
 
 public class enemy {
     int enemy_hp;
     String name = nameGen();
 
-    public enemy(int enemy_hp) {
-        this.enemy_hp = enemy_hp;
+    public enemy() {
+        this.enemy_hp = rng.randomcislo(10) + 5;
     }
 
     public void gethit(int dmg) {
@@ -34,7 +34,7 @@ public class enemy {
         return names[randomIndex];
     }
 
-    public String toString() {
+    public String getName() {
         return name;
     }
 }
