@@ -16,6 +16,8 @@ public class action {
 
     public String udelej() {
         switch (odpoved) {
+            case "actions" :
+                return "available actions: help, punch, call mom, call dad, run, yell, upgrade punch";
             case "help":
                 return "tady neni zadna pomoc bro";
                 
