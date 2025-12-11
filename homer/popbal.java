@@ -7,8 +7,10 @@ public class popbal {
         Scanner input = new Scanner(System.in);
         boolean endgame = true;
         enemy zloun = new enemy();
-
+        System.out.println("welcome to homer simulator 2024");
         System.out.println("in front of you is a evil ass man tryna beat yo shi");
+
+        
 
         while (endgame) {
             System.out.println("// what do you do //");
