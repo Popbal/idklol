@@ -16,6 +16,10 @@ public class popbal {
             System.exit(0);
         }
 
+        System.out.println("Enter name of your unfortunate player:");
+        String playerName = input.nextLine();
+        player player1 = new player(playerName);
+
 
         // ADD PLAYER SETUP HERE NAME N SHI
 
@@ -23,8 +27,10 @@ public class popbal {
 
 
         // FIGHT SEQUENCE
-        enemy zloun = new enemy(5);
-        System.out.println("in front of you is "+ zloun.name + " tryna beat yo shi");
+        enemy zloun = new enemy(rng.randomcislo(10) + 10);
+        System.out.println("in front of " + player1.getName() + " is "+ zloun.enemy_name + " tryna beat their shi");
+        System.out.println("his HP is " + zloun.enemy_hp + "\n");
+        System.out.println("type 'actions' to see available actions\n");
 
         
 
@@ -38,7 +44,7 @@ public class popbal {
             }
         }
         input.close();
-        System.out.println("you killed "+ zloun.name);
+        System.out.println("you killed "+ zloun.enemy_name);
     }
 
 

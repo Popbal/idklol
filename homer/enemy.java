@@ -2,14 +2,14 @@ package homer;
 
 public class enemy {
     int enemy_hp;
-    String name = nameGen();
+    String enemy_name = nameGen();
 
     public enemy(int enemy_hp) {
         this.enemy_hp = enemy_hp;
     }
 
     public void gethit(int dmg) {
-        System.out.println("bro ma rn" + enemy_hp);
+        System.out.println(enemy_name +" ma rn " + enemy_hp);
         enemy_hp = enemy_hp - dmg;
         System.out.println("uderils mu " + dmg);
         System.out.println("tedka ma " + enemy_hp);
@@ -35,6 +35,6 @@ public class enemy {
     }
 
     public String toString() {
-        return name;
+        return enemy_name;
     }
 }
