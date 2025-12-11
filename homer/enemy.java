@@ -29,7 +29,7 @@ public class enemy {
         String[] names = { "debil", "kokot", "hujer", "blbec", "mrdka", "pako", "hovado", "blb", "idiot", "cvok", "fag",
                 "idiot", "loser", "dummy", "moron", "nincompoop", "dunce", "simpleton", "blockhead", "bonehead",
                 "dimwit", "dullard", "airhead", "birdbrain", "clod", "cretin", "dope", "dunderhead", "halfwit",
-                "nitwit", "numskull", "pinhead", "twit" };
+                "nitwit", "numskull", "pinhead", "twit", "darkgamer", "gooner" };
         int randomIndex = (int) (Math.random() * names.length);
         return names[randomIndex];
     }
