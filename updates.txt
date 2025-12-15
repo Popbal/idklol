@@ -1,6 +1,9 @@
 11.12. Noobski232 - import change: now imports everything - just me testing
 
 11.12. Noobski232 - changed code into methods for better visibility and future work
-+ enemy hp is now randomized from 1-15
++ enemy hp is now randomized from 5-15
 + removed "package homer", somehow it broke
 
+15.12. Noobski232 - changed methods for name generators using filereaders
++ .txt files are now idklol/names directory
++ few UI upgrades

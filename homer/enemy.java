@@ -1,15 +1,16 @@
 
+import java.io.*;
 
 public class enemy {
     int enemy_hp;
     String name = nameGen();
 
     public enemy() {
-        this.enemy_hp = rng.randomcislo(10) + 5;
+        this.enemy_hp = rng.randomcislo(11) + 4;
     }
 
     public void gethit(int dmg) {
-        System.out.println("bro ma rn" + enemy_hp);
+        System.out.println("bro ma rn " + enemy_hp);
         enemy_hp = enemy_hp - dmg;
         System.out.println("uderils mu " + dmg);
         System.out.println("tedka ma " + enemy_hp);
@@ -26,12 +27,14 @@ public class enemy {
     }
 
     public String nameGen() {
-        String[] names = { "debil", "kokot", "hujer", "blbec", "mrdka", "pako", "hovado", "blb", "idiot", "cvok", "fag",
-                "idiot", "loser", "dummy", "moron", "nincompoop", "dunce", "simpleton", "blockhead", "bonehead",
-                "dimwit", "dullard", "airhead", "birdbrain", "clod", "cretin", "dope", "dunderhead", "halfwit",
-                "nitwit", "numskull", "pinhead", "twit", "darkgamer", "gooner" };
-        int randomIndex = (int) (Math.random() * names.length);
-        return names[randomIndex];
+        try (BufferedReader br = new BufferedReader(new FileReader("idklol/names/zlounNames.txt"))){
+            String everything = br.readAllAsString().replaceAll("\r\n", "").replace("ENEMY NAMES - Follow the \";\" rule","");
+            String[] names = everything.split(";");
+            int randomIndex = rng.randomcislo(names.length-1);
+            return names[randomIndex];
+        } catch (IOException e){
+            return "something went wrong with zlounNames.txt twin";
+        }
     }
 
     public String getName() {

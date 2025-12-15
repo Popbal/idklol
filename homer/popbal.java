@@ -1,13 +1,14 @@
 //MAIN GAME
 
 import java.util.*;
+import java.io.*;
 
 public class popbal {
     static Scanner input = new Scanner(System.in);
     boolean endgame = true;
 
+    // GAME START
     public static void main(String[] args) {
-        // START GAME
         popbal game = new popbal();
         game.gameStartUi();
         game.playerSetup();
@@ -15,9 +16,9 @@ public class popbal {
 
     }
 
+    // GAME START UI
     public void gameStartUi() {
-        // GAME START UI
-        System.out.println("welcome to " + gameNameGenerator());
+        System.out.println("// welcome to " + gameNameGenerator() + " //");
         System.out.println("Type 1 to start");
         String startinput = input.nextLine();
         if (!startinput.equals("1")) {
@@ -28,20 +29,19 @@ public class popbal {
         System.out.println();
     }
 
-    // PERHAPS A DIFFERENT FILE LATER
-    public static String gameNameGenerator() {
-        String[] gamenames = { "Homer Simulator 2024", "Matescomp had it coming", "Balava's Revenge",
-                "League of 9/11", "Fortnite: The second coming", "The best RPG of 2024", "Sex World Online",
-                "No Future: For Everyone", "Deepwoken", "Mommy House vs Carlito: Gang Wars"
-        };
-        int randomIndex = (int) (Math.random() * gamenames.length);
-        return gamenames[randomIndex];
+    // PLAYER SETUP
+    public void playerSetup() {
+        System.out.println("yo whats ur name og");
+        String playername = input.nextLine();
+        System.out.println("aight " + playername + " let's get it");
+        System.out.println();
     }
 
+    // FIGHT SEQUENCE - make fight sequence repeatable for multiple enemies
     public void startFightSequence() {
-        // FIGHT SEQUENCE
         enemy zloun = new enemy();
-        System.out.println("in front of you is " + zloun.name + " tryna beat yo shi");
+        System.out.println("in front of you is " + zloun.name + " with " + zloun.enemy_hp + " hp tryna beat yo shi");
+        System.out.println("// available actions: help, punch, call mom, call dad, run, yell, upgrade punch //");
 
         while (endgame) {
             System.out.println("// what do you do //");
@@ -49,18 +49,22 @@ public class popbal {
             action ok = new action(odpoved, zloun);
             System.out.println(ok.udelej() + "\n");
             if (zloun.isbrodead() == true) {
+                System.out.println("you killed " + zloun.name);
                 endgame = false;
             }
         }
         input.close();
-        System.out.println("you killed " + zloun.name);
     }
 
-    public void playerSetup() {
-        // PLAYER SETUP
-        System.out.println("yo whats ur name og");
-        String playername = input.nextLine();
-        System.out.println("aight " + playername + " let's get it");
-        System.out.println();
+    // GAME NAME GENERATOR
+    public static String gameNameGenerator() {
+        try (BufferedReader br = new BufferedReader(new FileReader("idklol/names/gameNames.txt"))) {
+            String everything = br.readAllAsString().replaceAll("\r\n", "").replace("GAME NAMES - Follow the \";\" rule","");
+            String[] gameNames = everything.split(";");
+            int randomIndex = rng.randomcislo(gameNames.length-1);
+            return gameNames[randomIndex];
+        } catch (IOException e) {
+            return "something went wrong with gameNames.txt twin";
+        }
     }
 }
