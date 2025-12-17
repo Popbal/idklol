@@ -3,7 +3,7 @@ import java.io.*;
 
 public class enemy {
     int enemy_hp;
-    String name = nameGen();
+    String name = rng.nameGen();
 
     public enemy() {
         this.enemy_hp = rng.randomcislo(11) + 4;
@@ -24,17 +24,6 @@ public class enemy {
         } else
             return false;
 
-    }
-
-    public String nameGen() {
-        try (BufferedReader br = new BufferedReader(new FileReader("idklol/names/zlounNames.txt"))){
-            String everything = br.readAllAsString().replaceAll("\r\n", "").replace("ENEMY NAMES - Follow the \";\" rule","");
-            String[] names = everything.split(";");
-            int randomIndex = rng.randomcislo(names.length-1);
-            return names[randomIndex];
-        } catch (IOException e){
-            return "something went wrong with zlounNames.txt twin";
-        }
     }
 
     public String getName() {

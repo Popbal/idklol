@@ -5,20 +5,28 @@ import java.io.*;
 
 public class popbal {
     static Scanner input = new Scanner(System.in);
-    boolean endgame = true;
 
     // GAME START
     public static void main(String[] args) {
         popbal game = new popbal();
+
+        map mapa = new map(20);
+        mapa.printMap();
+
         game.gameStartUi();
         game.playerSetup();
         game.startFightSequence();
+        game.startFightSequence();
+
+
+        input.close();
 
     }
 
+
     // GAME START UI
     public void gameStartUi() {
-        System.out.println("// welcome to " + gameNameGenerator() + " //");
+        System.out.println("// welcome to " + rng.gameNameGenerator() + " //");
         System.out.println("Type 1 to start");
         String startinput = input.nextLine();
         if (!startinput.equals("1")) {
@@ -37,8 +45,9 @@ public class popbal {
         System.out.println();
     }
 
-    // FIGHT SEQUENCE - make fight sequence repeatable for multiple enemies
+    // FIGHT SEQUENCE
     public void startFightSequence() {
+        boolean endgame = true;
         enemy zloun = new enemy();
         System.out.println("in front of you is " + zloun.name + " with " + zloun.enemy_hp + " hp tryna beat yo shi");
         System.out.println("// available actions: help, punch, call mom, call dad, run, yell, upgrade punch //");
@@ -53,18 +62,6 @@ public class popbal {
                 endgame = false;
             }
         }
-        input.close();
-    }
-
-    // GAME NAME GENERATOR
-    public static String gameNameGenerator() {
-        try (BufferedReader br = new BufferedReader(new FileReader("idklol/names/gameNames.txt"))) {
-            String everything = br.readAllAsString().replaceAll("\r\n", "").replace("GAME NAMES - Follow the \";\" rule","");
-            String[] gameNames = everything.split(";");
-            int randomIndex = rng.randomcislo(gameNames.length-1);
-            return gameNames[randomIndex];
-        } catch (IOException e) {
-            return "something went wrong with gameNames.txt twin";
-        }
+        System.out.println();
     }
 }

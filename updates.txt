@@ -7,3 +7,7 @@
 15.12. Noobski232 - changed methods for name generators using filereaders
 + .txt files are now idklol/names directory
 + few UI upgrades
+
+17.12. Noobski232 - made non-functional map
++ put name generators into rng
++ game sequences are now repeatable
