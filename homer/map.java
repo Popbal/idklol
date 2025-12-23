@@ -13,7 +13,7 @@ public class map {
         int minCol = source_column, maxCol = source_column;
         everything[source_row][source_column] = true;
 
-        while (row < 6 || column < 6) {
+        while (row < 4 || column < 4) {
             for (int i = 0; i <= randomizerNumber; i++) {
                 switch (rng.randomcislo(4)) {
                     case 1:

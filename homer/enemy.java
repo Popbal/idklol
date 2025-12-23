@@ -10,10 +10,7 @@ public class enemy {
     }
 
     public void gethit(int dmg) {
-        System.out.println("bro ma rn " + enemy_hp);
         enemy_hp = enemy_hp - dmg;
-        System.out.println("uderils mu " + dmg);
-        System.out.println("tedka ma " + enemy_hp);
     }
 
     public boolean isbrodead() {

@@ -8,6 +8,7 @@ public class action {
     Random random = new Random();
     enemy zloun;
     boolean upgradedpunch = false;
+    int damagedealt;
 
     public action(String odpoved, enemy zloun) {
         this.odpoved = odpoved;
@@ -23,13 +24,13 @@ public class action {
                 
             case "punch":
                 if (upgradedpunch) {
-                    int random_hit_upgraded = rng.randomcislo(10);
-                    zloun.gethit(random_hit_upgraded);
-                    return "";
+                    this.damagedealt = rng.randomcislo(10);
+                    zloun.gethit(damagedealt + 1);
+                    return "upgraded punch";
                 }
-                int random_hit = rng.randomcislo(5);
-                zloun.gethit(random_hit);
-                return "";
+                this.damagedealt = rng.randomcislo(5);
+                zloun.gethit(damagedealt + 1);
+                return "punch";
 
             case "call mom":
                 return "mom is busy rn";

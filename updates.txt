@@ -11,3 +11,6 @@
 17.12. Noobski232 - made non-functional map
 + put name generators into rng
 + game sequences are now repeatable
+
+23.12. Noobski232 - made player being able to die
++ many upgrades to fight sequence, action, etc.
